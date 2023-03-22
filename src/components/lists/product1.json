@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product22_product1s",
+  "info": {
+    "displayName": "products_list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "amount": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "wholesale_price": {
+      "type": "float",
+      "required": true,
+      "min": 0
+    }
+  }
+}

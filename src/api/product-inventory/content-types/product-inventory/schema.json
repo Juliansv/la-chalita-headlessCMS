@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_inventories",
+  "info": {
+    "singularName": "product-inventory",
+    "pluralName": "product-inventories",
+    "displayName": "product_inventory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer",
+      "required": true
+    },
+    "min_desired": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_payments",
+  "info": {
+    "singularName": "client-payment",
+    "pluralName": "client-payments",
+    "displayName": "client_payment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "client_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client"
+    },
+    "payment_type": {
+      "type": "string",
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "required": true
+    },
+    "account_number": {
+      "type": "biginteger",
+      "required": true
+    },
+    "expiry": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

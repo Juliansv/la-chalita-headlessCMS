@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_addresses",
+  "info": {
+    "singularName": "client-address",
+    "pluralName": "client-addresses",
+    "displayName": "client_address"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "type": "integer",
+      "required": true
+    },
+    "address_line1": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "address_line2": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "postal_code": {
+      "type": "integer",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "mobile": {
+      "type": "biginteger",
+      "required": false
+    }
+  }
+}

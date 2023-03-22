@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "client",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "address": {
+      "type": "string",
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": false,
+      "minLength": 6,
+      "maxLength": 20
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "client_payments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client-payment.client-payment"
+    },
+    "client_addresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client-address.client-address"
+    },
+    "shopping_session": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shopping-session.shopping-session",
+      "mappedBy": "client_id"
+    },
+    "order_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-detail.order-detail",
+      "mappedBy": "client"
+    }
+  }
+}

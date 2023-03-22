@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "orders_deprecated",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "order_number": {
+      "type": "biginteger"
+    },
+    "total_amount": {
+      "type": "float"
+    },
+    "shipping_cost": {
+      "type": "float"
+    },
+    "order_status": {
+      "type": "enumeration",
+      "enum": [
+        "Draft",
+        "In progress",
+        "Recieved"
+      ]
+    },
+    "supplier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proveedor.proveedor"
+    },
+    "products": {
+      "type": "component",
+      "repeatable": true,
+      "component": "lists.product1",
+      "required": true
+    }
+  }
+}
